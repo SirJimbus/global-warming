@@ -1,5 +1,5 @@
 import React from "react";
-import ClientApi from "./ClientApi";
+import Co2Api from "../../ApiCalls/Co2Api";
 import "./co2.css";
 import {
   LineChart,
@@ -12,11 +12,13 @@ import {
 } from "recharts";
 
 const co2 = () => {
-  const co2Data = ClientApi();
+  const co2Data = Co2Api();
 
   return (
-    <div>
+    <div className="co2" id="co2">
+      <p className="co2-title">Co2 levels Chart</p>
       <LineChart
+        className="line-chart"
         width={500}
         height={300}
         data={co2Data}
@@ -43,10 +45,12 @@ const co2 = () => {
       <p className="co2-paragraph">
         L'asse Y indica la quantità di CO2 (misurata in parti per milione o ppm)
         nell'atmosfera. I numeri sull'asse Y rappresentano i valori specifici
-        della quantità di CO2 in un momento specifico. Questi valori sono spesso
+        della quantità di CO2 in un momento specifico. Questi valori sono
         rappresentati come punti sulla linea del grafico, con la linea che
         collega questi punti che mostra la tendenza generale dei livelli di CO2
-        nel tempo.
+        nel tempo. Le linee di "cycle" e "trend" mostrano l'evoluzione delle
+        concentrazioni di CO2 nel tempo, con "cycle" che mostra le fluttuazioni
+        a breve termine e "trend" che mostra la tendenza di lungo termine.
       </p>
     </div>
   );
