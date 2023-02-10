@@ -14,11 +14,15 @@ export default function Navbar() {
           Toggle
         </button>
         <ul className={`navbar-list ${expanded ? "expanded" : "collapsed"}`}>
-          <li className="navbar-item">Temperatura</li>
           <li className="navbar-item">
-            <a href="co2">Co2</a>
+            <a href="#temperature">Temperatura</a>
           </li>
-          <li className="navbar-item">Metano</li>
+          <li className="navbar-item">
+            <a href="#co2">Co2</a>
+          </li>
+          <li className="navbar-item">
+            <a href="#methane">Metano</a>
+          </li>
           <li className="navbar-item">No2</li>
           <li className="navbar-item">Ghiaccio Polare</li>
         </ul>

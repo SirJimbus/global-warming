@@ -19,8 +19,8 @@ const co2 = () => {
       <p className="co2-title">Co2 levels Chart</p>
       <LineChart
         className="line-chart"
-        width={500}
-        height={300}
+        width={800}
+        height={500}
         data={co2Data}
         margin={{
           top: 5,
