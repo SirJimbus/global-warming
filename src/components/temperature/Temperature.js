@@ -24,7 +24,7 @@ const Temperature = () => {
   return (
     <div className="temperature" id="temperature">
       <p className="temperature-title">Temperature Graph</p>
-      <LineChart width={800} height={500} data={data}>
+      <LineChart width={600} height={500} aspect={2} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey="time"
