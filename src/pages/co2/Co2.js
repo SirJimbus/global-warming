@@ -36,8 +36,20 @@ const co2 = () => {
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="cycle" stroke="#8884d8" dot={false} />
-          <Line type="monotone" dataKey="trend" stroke="#82ca9d" dot={false} />
+          <Line
+            type="monotone"
+            dataKey="cycle"
+            stroke="#524449"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="trend"
+            stroke="#44524D"
+            strokeWidth={3}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
       <p className="co2-paragraph">

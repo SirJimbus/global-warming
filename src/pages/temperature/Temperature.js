@@ -44,10 +44,10 @@ const Temperature = () => {
           <Line
             type="monotone"
             dataKey="station"
-            stroke="#8884d8"
+            stroke="#DF2021"
             dot={false}
           />
-          <Line type="monotone" dataKey="land" stroke="#82ca9d" dot={false} />
+          <Line type="monotone" dataKey="land" stroke="#DF7F20" dot={false} />
         </LineChart>
       </ResponsiveContainer>
       <p className="temperature-paragraph">

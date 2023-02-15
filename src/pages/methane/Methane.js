@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   Tooltip,
+  Legend,
 } from "recharts";
 import MethaneApi from "../../ApiCalls/MethaneApi";
 import "./methane.css";
@@ -33,13 +34,21 @@ function Methane() {
           />
           <YAxis type="number" domain={[1600, 2000]} />
           <Tooltip />
+          <Legend />
           <Line
             type="monotone"
             dataKey="average"
-            stroke="#8884d8"
+            stroke="#C4A484"
+            strokeWidth={3}
             dot={false}
           />
-          <Line type="monotone" dataKey="trend" stroke="#82ca9d" dot={false} />
+          <Line
+            type="monotone"
+            dataKey="trend"
+            stroke="#84A4C4"
+            strokeWidth={3}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
       <p className="methane-paragraph">

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export default function ClientApi() {
+export default function Co2Api() {
   const [co2Data, setCo2Data] = useState([]);
   const url = "https://global-warming.org/api/co2-api";
 

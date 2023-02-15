@@ -27,10 +27,15 @@ const Polar = () => {
           <Line
             type="monotone"
             dataKey="extent"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
+            stroke="#47D4E6"
+            strokeWidth={3}
           />
-          <Line type="monotone" dataKey="area" stroke="#82ca9d" />
+          <Line
+            type="monotone"
+            dataKey="area"
+            stroke="#4785E6"
+            strokeWidth={3}
+          />
         </LineChart>
       </ResponsiveContainer>
       <p className="polar-paragraph">

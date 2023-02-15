@@ -6,8 +6,14 @@
   align-items: center;
   margin-bottom: 20px;
 }
-
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular);
 .main-title {
   margin-top: 100px;
   margin-bottom: 50px;
+  font-family: Montserrat;
+}
+@import url(https://fonts.googleapis.com/css?family=Spectral:regular);
+h2,
+h3 {
+  font-family: Spectral;
 }

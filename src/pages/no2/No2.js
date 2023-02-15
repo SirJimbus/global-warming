@@ -33,9 +33,16 @@ const No2 = () => {
             type="monotone"
             dataKey="average"
             stroke="#8884d8"
+            strokeWidth={3}
             dot={false}
           />
-          <Line type="monotone" dataKey="trend" stroke="#82ca9d" dot={false} />
+          <Line
+            type="monotone"
+            dataKey="trend"
+            stroke="#82ca9d"
+            strokeWidth={3}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
       <p className="no2-paragraph">
