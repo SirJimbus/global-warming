@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -5,17 +6,22 @@ export default function Navbar() {
     <div>
       <nav className="navbar">
         <ul className="navbar-list">
-          <li className="navbar-item">
-            <a href="#temperature">Temperatura</a>
-          </li>
-          <li className="navbar-item">
-            <a href="#co2">Co2</a>
-          </li>
-          <li className="navbar-item">
-            <a href="#methane">Metano</a>
-          </li>
-          <li className="navbar-item">No2</li>
-          <li className="navbar-item">Ghiaccio Polare</li>
+          <Link to={"/"}>
+            <li className="navbar-item">Temperatura</li>
+          </Link>
+          <Link to={"/co2"}>
+            <li className="navbar-item">Co2</li>
+          </Link>
+          <Link to={"/methane"}>
+            {" "}
+            <li className="navbar-item">Metano</li>
+          </Link>
+          <Link to={"/no2"}>
+            <li className="navbar-item">No2</li>
+          </Link>
+          <Link to={"/polar"}>
+            <li className="navbar-item">Ghiaccio Polare</li>
+          </Link>
         </ul>
       </nav>
     </div>

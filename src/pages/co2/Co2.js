@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 const co2 = () => {
@@ -17,31 +18,28 @@ const co2 = () => {
   return (
     <div className="co2" id="co2">
       <p className="co2-title">Co2 levels Chart</p>
-      <LineChart
-        className="line-chart"
-        width={800}
-        height={500}
-        data={co2Data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <XAxis dataKey="year" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="cycle"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="trend" stroke="#82ca9d" />
-      </LineChart>
+      <ResponsiveContainer width="95%" height={400}>
+        <LineChart
+          className="line-chart"
+          width={800}
+          height={500}
+          data={co2Data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <XAxis dataKey="year" />
+          <YAxis type="number" domain={[380, 430]} />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="cycle" stroke="#8884d8" dot={false} />
+          <Line type="monotone" dataKey="trend" stroke="#82ca9d" dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
       <p className="co2-paragraph">
         L'asse Y indica la quantità di CO2 (misurata in parti per milione o ppm)
         nell'atmosfera. I numeri sull'asse Y rappresentano i valori specifici

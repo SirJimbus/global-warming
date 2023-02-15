@@ -1,18 +1,18 @@
-.temperature {
+.no2 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 @import url(https://fontlibrary.org//face/orkney);
-.temperature-title {
-  font-size: 26px;
+.no2-title {
   font-family: "OrkneyRegular";
   font-weight: normal;
   font-style: normal;
+  font-size: 26px;
 }
 
-.temperature-paragraph {
+.no2-paragraph {
   font-family: "OrkneyRegular";
   font-weight: normal;
   font-style: normal;
@@ -22,7 +22,12 @@
 }
 
 @media (max-width: 800px) {
-  .temperature-paragraph {
+  .no2-paragraph {
     text-align: left;
+    font-size: 15px;
+  }
+
+  .no2 {
+    text-align: center;
   }
 }

@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 import TemperatureApi from "../../ApiCalls/TemperatureApi";
 import "./temperature.css";
@@ -24,24 +25,31 @@ const Temperature = () => {
   return (
     <div className="temperature" id="temperature">
       <p className="temperature-title">Temperature Graph</p>
-      <LineChart width={600} height={500} aspect={2} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="time"
-          tickFormatter={(tickItem) => {
-            if (moment(tickItem, "YYYY.MM").isValid()) {
-              return moment(tickItem, "YYYY.MM").format("YYYY");
-            }
-            return tickItem;
-          }}
-          domain={["dataMin", "dataMax"]}
-        />
-        <YAxis type="number" domain={[-2, 2]} />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="station" stroke="#8884d8" />
-        <Line type="monotone" dataKey="land" stroke="#82ca9d" />
-      </LineChart>
+      <ResponsiveContainer width="95%" height={400}>
+        <LineChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis
+            dataKey="time"
+            tickFormatter={(tickItem) => {
+              if (moment(tickItem, "YYYY").isValid()) {
+                return moment(tickItem, "YYYY").format("YYYY");
+              }
+              return tickItem;
+            }}
+            domain={["dataMin", "dataMax"]}
+          />
+          <YAxis type="number" domain={[-2, 2]} />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="station"
+            stroke="#8884d8"
+            dot={false}
+          />
+          <Line type="monotone" dataKey="land" stroke="#82ca9d" dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
       <p className="temperature-paragraph">
         I valori sull'asse X rappresentano gli anni; i valori sull'asse Y
         rappresentano i valori di temperatura. L'obiettivo è quello di

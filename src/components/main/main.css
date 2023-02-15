@@ -1,7 +1,13 @@
 .main {
+  top: 0;
   display: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
