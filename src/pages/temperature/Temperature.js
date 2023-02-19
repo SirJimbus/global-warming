@@ -1,5 +1,4 @@
 import moment from "moment";
-import React, { useState, useEffect } from "react";
 import {
   LineChart,
   Line,
@@ -14,13 +13,7 @@ import TemperatureApi from "../../ApiCalls/TemperatureApi";
 import "./temperature.css";
 
 const Temperature = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    TemperatureApi().then((response) => {
-      setData(response.data.result);
-    });
-  }, []);
+  const data = TemperatureApi();
 
   return (
     <div className="temperature" id="temperature">

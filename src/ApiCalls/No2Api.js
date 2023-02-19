@@ -4,12 +4,12 @@ import axios from "axios";
 const No2Api = () => {
   const [no2Data, setNo2Data] = useState([]);
   const url = "https://global-warming.org/api/nitrous-oxide-api";
+  const getData = async () => {
+    const response = await axios.get(url);
+    setNo2Data(response.data.nitrous);
+  };
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get(url);
-      setNo2Data(response.data.nitrous);
-    };
     getData();
   }, []);
 
