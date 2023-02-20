@@ -1,4 +1,5 @@
 import moment from "moment";
+
 import {
   LineChart,
   Line,
@@ -10,14 +11,19 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import TemperatureApi from "../../ApiCalls/TemperatureApi";
-import "./temperature.css";
+import Chart from "../../components/chart/Chart";
 
 const Temperature = () => {
   const data = TemperatureApi();
+  const description = {
+    title: "Temperature Graph",
+    paragraph:
+      "I valori sull'asse X rappresentano gli anni; i valori sull'asse Y rappresentano i valori di temperatura. L'obiettivo è quello di visualizzare la relazione fra il tempo e i valori di temperatura, in modo che si possa vedere come i valori di temperatura cambiano nel tempo. In questo modo, è possibile confrontare i valori di temperatura in diversi momenti nel tempo e fare previsioni sulle tendenze future. I dati station e land rappresentano i valori di temperatura misurati rispettivamente presso una stazione meteorologica e sulla terraferma. In questo modo, è possibile confrontare i valori di temperatura misurati in questi due ambienti diversi e vedere come variano nel tempo. Questo fornisce una visione più completa della temperatura della Terra, che include sia i dati raccolti presso le stazioni meteorologiche che quelli raccolti sulla terraferma.",
+  };
 
   return (
-    <div className="temperature" id="temperature">
-      <p className="temperature-title">Temperature Graph</p>
+    <div>
+      <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -43,21 +49,6 @@ const Temperature = () => {
           <Line type="monotone" dataKey="land" stroke="#DF7F20" dot={false} />
         </LineChart>
       </ResponsiveContainer>
-      <p className="temperature-paragraph">
-        I valori sull'asse X rappresentano gli anni; i valori sull'asse Y
-        rappresentano i valori di temperatura. L'obiettivo è quello di
-        visualizzare la relazione tra il tempo e i valori di temperatura, in
-        modo che si possa vedere come i valori di temperatura cambiano nel
-        tempo. In questo modo, è possibile confrontare i valori di temperatura
-        in diversi momenti nel tempo e fare previsioni sulle tendenze future. I
-        dati "station" e "land" rappresentano i valori di temperatura misurati
-        rispettivamente presso una stazione meteorologica e sulla terraferma. In
-        questo modo, è possibile confrontare i valori di temperatura misurati in
-        questi due ambienti diversi e vedere come variano nel tempo. Questo
-        fornisce una visione più completa della temperatura della Terra, che
-        include sia i dati raccolti presso le stazioni meteorologiche che quelli
-        raccolti sulla terraferma.
-      </p>
     </div>
   );
 };

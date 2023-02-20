@@ -10,18 +10,26 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./no2.css";
+import Chart from "../../components/chart/Chart";
 
 const No2 = () => {
   const no2Data = No2Api();
+  const description = {
+    title: "No2 Chart",
+    paragraph: `I valori sull'asse Y del grafico rappresentano la media globale di
+  concentrazione di ossido di azoto (NO2) nell'atmosfera; la colonna
+  "average" rappresenta la media mensile delle concentrazioni di NO2 in
+  parti per miliardo (ppb), che sono state registrate in diverse parti del
+  mondo.`,
+  };
   const formatDate = (date) => {
     const year = new Date(date).getFullYear();
     return year;
   };
 
   return (
-    <div className="no2">
-      <p className="no2-title">No2 Emissions</p>
+    <div>
+      <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart data={no2Data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -45,14 +53,6 @@ const No2 = () => {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="no2-paragraph">
-        {" "}
-        I valori sull'asse Y del grafico rappresentano la media globale di
-        concentrazione di ossido di azoto (NO2) nell'atmosfera; la colonna
-        "average" rappresenta la media mensile delle concentrazioni di NO2 in
-        parti per miliardo (ppb), che sono state registrate in diverse parti del
-        mondo.
-      </p>
     </div>
   );
 };

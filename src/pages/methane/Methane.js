@@ -11,14 +11,22 @@ import {
   Legend,
 } from "recharts";
 import MethaneApi from "../../ApiCalls/MethaneApi";
-import "./methane.css";
+import Chart from "../../components/chart/Chart";
 
 function Methane() {
   const methaneData = MethaneApi();
+  const description = {
+    title: "Methane Graph",
+    paragraph: `Sull'asse y del grafico si rappresenta la concentrazione media di metano
+  nell'atmosfera in parti per miliardo (ppb). La concentrazione di metano
+  è misurata in parti per miliardo perché rappresenta la quantità di
+  molecole di metano presenti nell'atmosfera rispetto al totale di
+  molecole di aria presente.`,
+  };
 
   return (
-    <div className="methane" id="methane">
-      <p className="methane-title">Methane Graph</p>
+    <div>
+      <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart width={800} height={500} data={methaneData}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -51,13 +59,6 @@ function Methane() {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="methane-paragraph">
-        Sull'asse y del grafico si rappresenta la concentrazione media di metano
-        nell'atmosfera in parti per miliardo (ppb). La concentrazione di metano
-        è misurata in parti per miliardo perché rappresenta la quantità di
-        molecole di metano presenti nell'atmosfera rispetto al totale di
-        molecole di aria presente.
-      </p>
     </div>
   );
 }

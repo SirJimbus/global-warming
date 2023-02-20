@@ -1,6 +1,5 @@
 import React from "react";
 import Co2Api from "../../ApiCalls/Co2Api";
-import "./co2.css";
 import {
   LineChart,
   Line,
@@ -11,13 +10,25 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import Chart from "../../components/chart/Chart";
 
 const co2 = () => {
   const co2Data = Co2Api();
+  const description = {
+    title: "Co2 levels Chart",
+    paragraph: `L'asse Y indica la quantità di CO2 (misurata in parti per milione o ppm)
+  nell'atmosfera. I numeri sull'asse Y rappresentano i valori specifici
+  della quantità di CO2 in un momento specifico. Questi valori sono
+  rappresentati come punti sulla linea del grafico, con la linea che
+  collega questi punti che mostra la tendenza generale dei livelli di CO2
+  nel tempo. Le linee di "cycle" e "trend" mostrano l'evoluzione delle
+  concentrazioni di CO2 nel tempo, con "cycle" che mostra le fluttuazioni
+  a breve termine e "trend" che mostra la tendenza di lungo termine.`,
+  };
 
   return (
-    <div className="co2" id="co2">
-      <p className="co2-title">Co2 levels Chart</p>
+    <div>
+      <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart
           className="line-chart"
@@ -52,16 +63,6 @@ const co2 = () => {
           />
         </LineChart>
       </ResponsiveContainer>
-      <p className="co2-paragraph">
-        L'asse Y indica la quantità di CO2 (misurata in parti per milione o ppm)
-        nell'atmosfera. I numeri sull'asse Y rappresentano i valori specifici
-        della quantità di CO2 in un momento specifico. Questi valori sono
-        rappresentati come punti sulla linea del grafico, con la linea che
-        collega questi punti che mostra la tendenza generale dei livelli di CO2
-        nel tempo. Le linee di "cycle" e "trend" mostrano l'evoluzione delle
-        concentrazioni di CO2 nel tempo, con "cycle" che mostra le fluttuazioni
-        a breve termine e "trend" che mostra la tendenza di lungo termine.
-      </p>
     </div>
   );
 };

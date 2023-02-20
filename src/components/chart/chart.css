@@ -1,18 +1,18 @@
-.co2 {
+.chart {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 @import url(https://fontlibrary.org//face/orkney);
-.co2-title {
+.chart-title {
   font-family: "OrkneyRegular";
   font-weight: normal;
   font-style: normal;
   font-size: 26px;
 }
 
-.co2-paragraph {
+.chart-paragraph {
   font-family: "OrkneyRegular";
   font-weight: normal;
   font-style: normal;
@@ -22,12 +22,12 @@
 }
 
 @media (max-width: 800px) {
-  .co2-paragraph {
+  .chart-paragraph {
     text-align: left;
     font-size: 15px;
   }
 
-  .co2 {
+  .chart {
     text-align: center;
   }
 }
