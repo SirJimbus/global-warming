@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import MethaneApi from "../../ApiCalls/MethaneApi";
 import Chart from "../../components/chart/Chart";
+import Main from "../../components/main/Main";
+import Navbar from "../../components/navbar/Navbar";
 
 function Methane() {
   const methaneData = MethaneApi();
@@ -26,6 +28,8 @@ function Methane() {
 
   return (
     <div>
+      <Main />
+      <Navbar />
       <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart width={800} height={500} data={methaneData}>

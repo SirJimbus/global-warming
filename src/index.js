@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Main from "./components/main/Main";
-import Navbar from "./components/navbar/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Temperature from "./pages/temperature/Temperature";
 import Co2 from "./pages/co2/Co2";
 import Methane from "./pages/methane/Methane";
@@ -15,8 +13,6 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
-        <Main />
-        <Navbar />
         <Temperature />
       </div>
     ),
@@ -25,8 +21,6 @@ const router = createBrowserRouter([
     path: "/co2",
     element: (
       <div>
-        <Main />
-        <Navbar />
         <Co2 />
       </div>
     ),
@@ -35,8 +29,6 @@ const router = createBrowserRouter([
     path: "/methane",
     element: (
       <div>
-        <Main />
-        <Navbar />
         <Methane />
       </div>
     ),
@@ -45,8 +37,6 @@ const router = createBrowserRouter([
     path: "/no2",
     element: (
       <div>
-        <Main />
-        <Navbar />
         <No2 />
       </div>
     ),
@@ -55,8 +45,6 @@ const router = createBrowserRouter([
     path: "/polar",
     element: (
       <div>
-        <Main />
-        <Navbar />
         <Polar />
       </div>
     ),

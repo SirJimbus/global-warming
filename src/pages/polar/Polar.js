@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import "./polar.css";
 import Chart from "../../components/chart/Chart";
+import Main from "../../components/main/Main";
+import Navbar from "../../components/navbar/Navbar";
 
 const Polar = () => {
   const polarData = PolarApi();
@@ -27,6 +29,8 @@ const Polar = () => {
   };
   return (
     <div>
+      <Main />
+      <Navbar />
       <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart data={polarData}>

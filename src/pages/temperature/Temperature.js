@@ -12,6 +12,8 @@ import {
 } from "recharts";
 import TemperatureApi from "../../ApiCalls/TemperatureApi";
 import Chart from "../../components/chart/Chart";
+import Main from "../../components/main/Main";
+import Navbar from "../../components/navbar/Navbar";
 
 const Temperature = () => {
   const data = TemperatureApi();
@@ -23,6 +25,8 @@ const Temperature = () => {
 
   return (
     <div>
+      <Main />
+      <Navbar />
       <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart data={data}>

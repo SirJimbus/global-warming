@@ -11,6 +11,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Chart from "../../components/chart/Chart";
+import Navbar from "../../components/navbar/Navbar";
+import Main from "../../components/main/Main";
 
 const co2 = () => {
   const co2Data = Co2Api();
@@ -28,6 +30,8 @@ const co2 = () => {
 
   return (
     <div>
+      <Main />
+      <Navbar />
       <Chart description={description} />
       <ResponsiveContainer width="95%" height={400}>
         <LineChart
