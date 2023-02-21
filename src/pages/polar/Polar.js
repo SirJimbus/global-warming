@@ -10,7 +10,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./polar.css";
 import Chart from "../../components/chart/Chart";
 import Main from "../../components/main/Main";
 import Navbar from "../../components/navbar/Navbar";
