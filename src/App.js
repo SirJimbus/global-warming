@@ -55,7 +55,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // simulazione di caricamento dati
+    }, 1500);
   }, []);
 
   return (
