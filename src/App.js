@@ -60,7 +60,7 @@ function App() {
 
   return (
     <>
-      {isLoading && <p>Caricamento...</p>}
+      {isLoading && <p className="loading">Caricamento...</p>}
       {!isLoading && <RouterProvider router={router} />}
     </>
   );
